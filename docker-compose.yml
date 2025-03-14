@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  pages:
+    build: ./pages  # 🔹 pages/ 디렉토리에서 빌드
+    container_name: flask_pages
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./pages:/app  # 🔹 pages 디렉토리를 컨테이너의 /app에 마운트
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+      - MYSQL_HOST=db  # MySQL 서비스 이름
+    depends_on:
+      - db
+    # command: ["./wait-for-it.sh", "db:3306", "--", "flask", "run", "--host=0.0.0.0"]
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # 기본 root 계정 비밀번호 설정
+      MYSQL_DATABASE: mydatabase  # 기본 데이터베이스 생성
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./pages/db/init.sql:/docker-entrypoint-initdb.d/init.sql  # 초기 SQL 설정 파일

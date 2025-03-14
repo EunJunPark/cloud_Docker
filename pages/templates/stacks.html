@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}About - MyPage{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stacks.css') }}">
+
+    <section class="container">
+        <h1>WEB Structure & Stack</h1>
+
+        <!-- 기술 스택 섹션 -->
+        <section id="tech-stack" class="content-section">
+            <h2>Tech Stack</h2>
+            <ul>
+                <li>⚙️ Flask (Python)</li>
+                <li>🎨 HTML & CSS</li>
+                <li>📜 JavaScript</li>
+                <li>⚛️ React.js</li>
+                <li>🐳 Docker</li>
+                <li>🛢 MySQL</li>
+            </ul>
+        </section>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>File Structure</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                .file-tree {
+                    list-style-type: none;
+                }
+                .file-tree ul {
+                    list-style-type: none;
+                    padding-left: 20px;
+                }
+                .file-tree li {
+                    margin: 5px 0;
+                }
+                .folder {
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
+            <section id="file-tree" class="content-section">
+                <h2>File Structure</h2>
+                <div class="file-tree">
+                    <ul>
+                        <li class="folder">📂 <strong>backend</strong>
+                            <ul>
+                                <li>📄 app.py</li>
+                                <li>📄 Dockerfile</li>
+                                <li class="folder">📂 __pycache__
+                                    <ul>
+                                        <li>📄 routes.cpython-310.pyc</li>
+                                    </ul>
+                                </li>
+                                <li>📄 routes.py</li>
+                                <li class="folder">📂 static
+                                    <ul>
+                                        <li class="folder">📂 css
+                                            <ul>
+                                                <li>📄 contact.css</li>
+                                                <li>📄 stacks.css</li>
+                                            </ul>
+                                        </li>
+                                        <li>📄 script.js</li>
+                                        <li>📄 style.css</li>
+                                    </ul>
+                                </li>
+                                <li class="folder">📂 templates
+                                    <ul>
+                                        <li>📄 base.html</li>
+                                        <li>📄 contact.html</li>
+                                        <li>📄 index.html</li>
+                                        <li>📄 project.html</li>
+                                        <li>📄 stacks.html</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="folder">📂 db
+                            <ul>
+                                <li>📄 config.py</li>
+                                <li>📄 db.py</li>
+                                <li>📄 init.sql</li>
+                            </ul>
+                        </li>
+                        <li>📄 docker-compose.yml</li>
+                        <li class="folder">📂 frontend
+                            <ul>
+                                <li>📄 Dockerfile</li>
+                            </ul>
+                        </li>
+                        <li>📄 requirements.txt</li>
+                    </ul>
+                </div>
+            </section>
+        </body>
+        </html>
+        </body>
+        </html>
+        
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}홈 - MyPage{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stacks.css') }}">
+
+    <section class="hero">
+        <h1>환영합니다!</h1>
+        <p>클라우드 및 가상화</p>
+        <p>조선대학교</p>
+        <p>정보보안전공</p>
+        <p>20203368 박준언</p>
+        <p>Email: <a href="mailto:pppp6626@naver.com">pppp6626@naver.com</a></p>
+        <p>GitHub: <a href="https://github.com/EunJunPark" target="_blank">https://github.com/EunJunPark</a></p>
+        
+        <h1>관심분야</h1>
+        <h2>Forensic</h2>
+        <p>  - File System</p>
+        <p>  - Malware</p>
+        <p>  - Android</p>
+    </section>
+{% endblock %}

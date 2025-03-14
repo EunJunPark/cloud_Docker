@@ -1,0 +1,19 @@
+bcrypt==3.2.0
+certifi==2020.6.20
+chardet==4.0.0
+click==8.1.8
+cryptography==3.4.8
+Flask==2.0.3        # Flask 버전 낮춤 (Flask 3.1.0은 아직 출시되지 않음)
+idna==2.10          # idna 버전 2.10 (requests 2.25.1과 호환되는 버전)
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+paramiko==2.9.3
+pytz==2022.1
+PyNaCl==1.5.0
+PyYAML==5.4.1
+requests==2.25.1    # requests 버전 2.25.1 (idna 2.10과 호환)
+six==1.16.0
+urllib3==1.26.5    # urllib3 버전 1.26.5 (requests 2.25.1과 호환)
+Werkzeug==2.0.3     # Werkzeug 버전 2.0.3 (Flask 2.x와 호환)
+mysql-connector-python==9.2.0  # MySQL 클라이언트 라이브러리

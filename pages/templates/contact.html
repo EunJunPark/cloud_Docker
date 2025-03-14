@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}문의 게시판{% endblock %}
+
+{% block content %}
+    <h1 class="board-title">문의 게시판</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+    <!-- 새 글 작성 -->
+    <form action="{{ url_for('add_post') }}" method="POST" class="post-form">
+        <input type="text" name="name" placeholder="이름" required>
+        <input type="password" name="pw" placeholder="비밀번호" required>
+        <textarea name="context" placeholder="문의 내용을 입력하세요." required></textarea>
+        <button type="submit">등록</button>
+    </form>
+
+    <hr>
+
+    <!-- 게시글 목록 -->
+    <div class="post-list">
+        {% for post in posts %}
+            <div class="post-item">
+                <div class="post-content">
+                    <p><strong>{{ post[1] }}</strong>: {{ post[2] }}</p>
+                </div>
+                <form action="{{ url_for('delete_post', idx=post[0]) }}" method="POST" class="delete-form">
+                    <input type="password" name="pw" placeholder="비밀번호 입력 후 삭제" required>
+                    <button type="submit">삭제</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

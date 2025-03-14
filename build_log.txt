@@ -1,0 +1,142 @@
+Building pages
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 336B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.9
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python:3.9@sha256:5ea663a1c6ba266fdcac5949d1d2ea364ce30a2da92a3df95bb3c01437633ad9
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 768B 0.0s done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt /app/requirements.txt
+#7 CACHED
+
+#8 [4/5] RUN pip install -r requirements.txt
+#8 2.458 Collecting bcrypt==3.2.0
+#8 2.570   Downloading bcrypt-3.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (61 kB)
+#8 2.590      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.9/61.9 kB 4.4 MB/s eta 0:00:00
+#8 2.634 Collecting certifi==2020.6.20
+#8 2.648   Downloading certifi-2020.6.20-py2.py3-none-any.whl (156 kB)
+#8 2.667      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 156.6/156.6 kB 9.1 MB/s eta 0:00:00
+#8 2.700 Collecting chardet==4.0.0
+#8 2.716   Downloading chardet-4.0.0-py2.py3-none-any.whl (178 kB)
+#8 2.730      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 178.7/178.7 kB 14.3 MB/s eta 0:00:00
+#8 2.769 Collecting click==8.1.8
+#8 2.785   Downloading click-8.1.8-py3-none-any.whl (98 kB)
+#8 2.791      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 23.4 MB/s eta 0:00:00
+#8 3.099 Collecting cryptography==3.4.8
+#8 3.114   Downloading cryptography-3.4.8-cp36-abi3-manylinux_2_24_x86_64.whl (3.0 MB)
+#8 3.214      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 30.7 MB/s eta 0:00:00
+#8 3.258 Collecting Flask==3.1.0
+#8 3.270   Downloading flask-3.1.0-py3-none-any.whl (102 kB)
+#8 3.278      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.0/103.0 kB 22.3 MB/s eta 0:00:00
+#8 3.312 Collecting idna==3.3
+#8 3.323   Downloading idna-3.3-py3-none-any.whl (61 kB)
+#8 3.329      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 kB 14.7 MB/s eta 0:00:00
+#8 3.360 Collecting itsdangerous==2.2.0
+#8 3.372   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#8 3.410 Collecting Jinja2==3.1.6
+#8 3.421   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#8 3.432      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 20.8 MB/s eta 0:00:00
+#8 3.531 Collecting MarkupSafe==3.0.2
+#8 3.543   Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+#8 3.594 Collecting paramiko==2.9.3
+#8 3.609   Downloading paramiko-2.9.3-py2.py3-none-any.whl (210 kB)
+#8 3.617      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 210.5/210.5 kB 38.7 MB/s eta 0:00:00
+#8 3.675 Collecting pytz==2022.1
+#8 3.689   Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+#8 3.704      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 503.5/503.5 kB 41.0 MB/s eta 0:00:00
+#8 3.750 Collecting PyNaCl==1.5.0
+#8 3.763   Downloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (856 kB)
+#8 3.784      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 856.7/856.7 kB 48.3 MB/s eta 0:00:00
+#8 3.866 Collecting PyYAML==5.4.1
+#8 3.899   Downloading PyYAML-5.4.1-cp39-cp39-manylinux1_x86_64.whl (630 kB)
+#8 3.917      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 630.1/630.1 kB 49.8 MB/s eta 0:00:00
+#8 4.000 Collecting requests==2.25.1
+#8 4.013   Downloading requests-2.25.1-py2.py3-none-any.whl (61 kB)
+#8 4.019      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 kB 15.5 MB/s eta 0:00:00
+#8 4.052 Collecting six==1.16.0
+#8 4.065   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#8 4.122 Collecting urllib3==1.26.5
+#8 4.136   Downloading urllib3-1.26.5-py2.py3-none-any.whl (138 kB)
+#8 4.147      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 138.1/138.1 kB 21.9 MB/s eta 0:00:00
+#8 4.201 Collecting Werkzeug==3.1.3
+#8 4.214   Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+#8 4.224      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 36.4 MB/s eta 0:00:00
+#8 4.332 Collecting mysql-connector-python==9.2.0
+#8 4.644   Downloading mysql_connector_python-9.2.0-cp39-cp39-manylinux_2_28_x86_64.whl (33.9 MB)
+#8 5.635      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 33.9/33.9 MB 23.4 MB/s eta 0:00:00
+#8 5.938 Collecting cffi>=1.1
+#8 5.966   Downloading cffi-1.17.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (445 kB)
+#8 5.979      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 445.2/445.2 kB 48.5 MB/s eta 0:00:00
+#8 6.043 Collecting blinker>=1.9
+#8 6.057   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#8 6.150 Collecting importlib-metadata>=3.6
+#8 6.162   Downloading importlib_metadata-8.6.1-py3-none-any.whl (26 kB)
+#8 6.298 INFO: pip is looking at multiple versions of pyyaml to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of pynacl to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of pytz to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of paramiko to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of markupsafe to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of jinja2 to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of itsdangerous to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of idna to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of flask to determine which version is compatible with other requirements. This could take a while.
+#8 6.298 INFO: pip is looking at multiple versions of cryptography to determine which version is compatible with other requirements. This could take a while.
+#8 6.302 INFO: pip is looking at multiple versions of click to determine which version is compatible with other requirements. This could take a while.
+#8 6.302 INFO: pip is looking at multiple versions of chardet to determine which version is compatible with other requirements. This could take a while.
+#8 6.302 INFO: pip is looking at multiple versions of certifi to determine which version is compatible with other requirements. This could take a while.
+#8 6.309 INFO: pip is looking at multiple versions of <Python from Requires-Python> to determine which version is compatible with other requirements. This could take a while.
+#8 6.310 INFO: pip is looking at multiple versions of bcrypt to determine which version is compatible with other requirements. This could take a while.
+#8 6.312 
+#8 6.312 The conflict is caused by:
+#8 6.312     The user requested idna==3.3
+#8 6.312     requests 2.25.1 depends on idna<3 and >=2.5
+#8 6.312 
+#8 6.312 To fix this you could try to:
+#8 6.312 1. loosen the range of package versions you've specified
+#8 6.312 2. remove package versions to allow pip attempt to solve the dependency conflict
+#8 6.312 
+#8 6.316 ERROR: Cannot install -r requirements.txt (line 15) and idna==3.3 because these package versions have conflicting dependencies.
+#8 6.316 ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+#8 6.523 
+#8 6.523 [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+#8 6.523 [notice] To update, run: pip install --upgrade pip
+#8 ERROR: process "/bin/sh -c pip install -r requirements.txt" did not complete successfully: exit code: 1
+------
+ > [4/5] RUN pip install -r requirements.txt:
+6.312 
+6.312 To fix this you could try to:
+6.312 1. loosen the range of package versions you've specified
+6.312 2. remove package versions to allow pip attempt to solve the dependency conflict
+6.312 
+6.316 ERROR: Cannot install -r requirements.txt (line 15) and idna==3.3 because these package versions have conflicting dependencies.
+6.316 ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+6.523 
+6.523 [notice] A new release of pip is available: 23.0.1 -> 25.0.1
+6.523 [notice] To update, run: pip install --upgrade pip
+------
+Dockerfile:11
+--------------------
+   9 |     
+  10 |     # 패키지 설치
+  11 | >>> RUN pip install -r requirements.txt
+  12 |     
+  13 |     # 모든 파일 복사
+--------------------
+ERROR: failed to solve: process "/bin/sh -c pip install -r requirements.txt" did not complete successfully: exit code: 1
+Service 'pages' failed to build : Build failed
