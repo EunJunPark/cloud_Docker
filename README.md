@@ -1,5 +1,6 @@
 # Cloud Docker Project
 
+# flask:80/ mysql: 3307
 이 프로젝트는 **Docker**와 **Flask**를 이용한 **MySQL 연동 웹 애플리케이션**입니다. 
 이 문서는 **Windows**와 **Linux**에서 Docker를 설정하고 애플리케이션을 실행하는 방법을 안내합니다.
 
@@ -28,6 +29,6 @@ docker-compose up --build
 4. 웹 애플리케이션 접속
 애플리케이션이 실행된 후, 웹 브라우저에서 아래 주소로 접속합니다.
 
-http://localhost:5000
-브라우저에서 localhost:5000 주소로 접속하면, Flask 애플리케이션이 실행되는 웹 페이지를 볼 수 있습니다.
+http://localhost
+브라우저에서 localhost 주소로 접속하면, Flask 애플리케이션이 실행되는 웹 페이지를 볼 수 있습니다.
 
