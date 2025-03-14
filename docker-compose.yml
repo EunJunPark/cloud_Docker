@@ -6,7 +6,7 @@ services:
     container_name: flask_pages
     restart: always
     ports:
-      - "5000:5000"
+      - "80:80"
     volumes:
       - ./pages:/app  # 🔹 pages 디렉토리를 컨테이너의 /app에 마운트
     environment:
@@ -25,6 +25,6 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword  # 기본 root 계정 비밀번호 설정
       MYSQL_DATABASE: mydatabase  # 기본 데이터베이스 생성
     ports:
-      - "3306:3306"
+      - "3307:3307"
     volumes:
       - ./pages/db/init.sql:/docker-entrypoint-initdb.d/init.sql  # 초기 SQL 설정 파일
