@@ -9,19 +9,15 @@
 
 먼저, Git 저장소를 클론합니다. 터미널 또는 명령 프롬프트에서 아래 명령어를 입력하여 저장소를 클론하세요.
 
-#### Windows (CMD 관리자 권한):
-git clone https://github.com/EunJunPark/cloud_Docker.git
-Linux (su 권한):
-bash
-코드 복사
+#### Windows (CMD 관리자 권한): Linux (su 권한)
 git clone https://github.com/EunJunPark/cloud_Docker.git
 
-2. 디렉토리로 이동
+#### 2. 디렉토리로 이동
 저장소를 클론한 후, 해당 디렉토리로 이동합니다. cd 명령어를 사용하여 디렉토리로 이동하세요.
 
 cd cloud_Docker
 
-3. Docker Compose로 애플리케이션 실행
+#### 3. Docker Compose로 애플리케이션 실행
 애플리케이션을 실행하기 위해 Docker Compose를 사용합니다. docker-compose.yml 파일이 포함되어 있어, Docker와 MySQL 컨테이너를 한 번에 빌드하고 실행할 수 있습니다.
 
 아래 명령어를 실행하여 애플리케이션을 빌드하고 시작합니다:
