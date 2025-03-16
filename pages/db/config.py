@@ -5,7 +5,7 @@ class Config:
     MYSQL_USER = os.getenv('MYSQL_USER', 'admin')  # 로컬에서는 기본적으로 'root' 계정 사용
     MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD', 'admin')
     MYSQL_DB = os.getenv('MYSQL_DB', 'mydatabases')
-    MYSQL_PORT = int(os.getenv('MYSQL_PORT', 3307))  # 로컬 MySQL이 3307 포트에서 실행됨
+    MYSQL_PORT = int(os.getenv('MYSQL_PORT', 3306))  # 로컬 MySQL이 3307 포트에서 실행됨
 
 # import os
 
