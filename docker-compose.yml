@@ -17,7 +17,7 @@ services:
       - DOCKER_ENV=true
     depends_on:
       db:
-        condition: service_healthy  #  MySQL이 정상 실행된 후 Flask 실행
+        condition: service_healthy  # MySQL이 완전히 실행된 후 Flask 실행
 
   db:
     image: mysql:8.0
@@ -33,13 +33,16 @@ services:
     volumes:
       - ./pages/db/init.sql:/docker-entrypoint-initdb.d/init.sql
       - mysql_data:/var/lib/mysql
-    healthcheck:  # MySQL 상태 확인 후 Flask 실행
+    healthcheck:  # ✅ MySQL 상태 확인 후 Flask 실행
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 5s
       retries: 5
     command: >
-      bash -c "docker-entrypoint.sh mysqld --init-file=/docker-entrypoint-initdb.d/init.sql"
+      bash -c "echo '[mysqld]' > /etc/mysql/conf.d/docker.cnf &&
+               echo 'bind-address = 0.0.0.0' >> /etc/mysql/conf.d/docker.cnf &&
+               echo 'port = 3307' >> /etc/mysql/conf.d/docker.cnf &&
+               docker-entrypoint.sh mysqld --init-file=/docker-entrypoint-initdb.d/init.sql"
 
 volumes:
   mysql_data:
