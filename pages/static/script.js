@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 🚀 네비게이션바 로드 기능 추가
+    // 네비게이션바 로드 기능 추가
     fetch("/static/navbar.html")
         .then(response => {
             if (!response.ok) {
