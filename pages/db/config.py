@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    MYSQL_HOST = os.getenv('MYSQL_HOST', '127.0.0.1')  # 로컬에서는 '127.0.0.1' 사용
+    MYSQL_HOST = os.getenv('MYSQL_HOST', 'db')  # 로컬에서는 '127.0.0.1' 사용
     MYSQL_USER = os.getenv('MYSQL_USER', 'admin')  # 로컬에서는 기본적으로 'root' 계정 사용
     MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD', 'admin')
     MYSQL_DB = os.getenv('MYSQL_DB', 'mydatabases')
