@@ -2,34 +2,36 @@ version: '3.8'
 
 services:
   pages:
-    build: ./pages  # 🔹 pages/ 디렉토리에서 빌드
+    build: ./pages
     container_name: flask_pages
     restart: always
     ports:
       - "80:80"
     volumes:
-      - ./pages:/app  # 🔹 pages 디렉토리를 컨테이너의 /app에 마운트
+      - ./pages:/app
     environment:
       - FLASK_ENV=development
       - FLASK_APP=app.py
-      - MYSQL_HOST=db  # MySQL 서비스 이름
+      - MYSQL_HOST=db
       - MYSQL_PORT=3306
     depends_on:
       - db
-    # command: ["./wait-for-it.sh", "db:3306", "--", "flask", "run", "--host=0.0.0.0"]
 
-    db:
-        image: mysql:8.0
-        container_name: mysql_db
-        restart: always
-        environment:
-          MYSQL_ROOT_PASSWORD: rootpassword  # root 계정 비밀번호 설정
-          MYSQL_DATABASE: mydatabases         # 기본 데이터베이스 생성
-          MYSQL_USER: admin                  # 기본 사용자 설정
-          MYSQL_PASSWORD: admin              # 기본 사용자 비밀번호 설정
-        ports:
-          - "3307:3306"  # 컨테이너 내부 3306을 호스트 3307로 매핑
-        volumes:
-          - ./pages/db/init.sql:/docker-entrypoint-initdb.d/init.sql  # 여기에 .sql 파일 마운트
-          - mysql_data:/var/lib/mysql  # MySQL 데이터 영구 저장 (필수)
-        command: --init-file /docker-entrypoint-initdb.d/init.sql  # MySQL 실행 시 init.sql 강제 실행
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabases
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./pages/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+    command: --init-file /docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql_data:
