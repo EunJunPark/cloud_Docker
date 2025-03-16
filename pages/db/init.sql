@@ -1,6 +1,6 @@
 -- 데이터베이스 생성
-CREATE DATABASE IF NOT EXISTS mydatabase;
-USE mydatabase;
+CREATE DATABASE IF NOT EXISTS mydatabases;
+USE mydatabases;
 
 -- 2. 기존 사용자 삭제 (이미 존재하는 경우)
 DROP USER IF EXISTS 'admin'@'%';
