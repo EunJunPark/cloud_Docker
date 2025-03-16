@@ -73,5 +73,5 @@ def setup_routes(app):
         db.commit()
         db.close()
 
-        flash("게시글이 삭제되었습니다.", "success")
+        # flash("게시글이 삭제되었습니다.", "success")
         return redirect(url_for('contact'))

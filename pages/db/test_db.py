@@ -9,7 +9,7 @@ try:
         port=3307,
         auth_plugin='mysql_native_password'
     )
-    print("✅ MySQL 연결 성공")
+    print(" MySQL 연결 성공")
     conn.close()
 except mysql.connector.Error as err:
-    print(f"❌ MySQL 연결 실패: {err}")
+    print(f" MySQL 연결 실패: {err}")
