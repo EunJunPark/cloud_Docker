@@ -42,36 +42,36 @@ def setup_routes(app):
 
         return redirect(url_for('contact'))
 
-    @app.route('/delete_post/<int:idx>', methods=['POST'])
-    def delete_post(idx):
-        """게시글 삭제 (비밀번호 확인)"""
-        pw = request.form.get("pw")  # 입력된 비밀번호 가져오기
+    # @app.route('/delete_post/<int:idx>', methods=['POST'])
+    # def delete_post(idx):
+    #     """게시글 삭제 (비밀번호 확인)"""
+    #     pw = request.form.get("pw")  # 입력된 비밀번호 가져오기
 
-        if not pw:
-            flash("비밀번호를 입력하세요.", "danger")
-            return redirect(url_for('contact'))
+    #     if not pw:
+    #         flash("비밀번호를 입력하세요.", "danger")
+    #         return redirect(url_for('contact'))
 
-        cursor, db = get_cursor()
+    #     cursor, db = get_cursor()
 
-        # 삭제할 게시글의 비밀번호 가져오기
-        cursor.execute("SELECT pw FROM board WHERE idx = %s", (idx,))
-        post = cursor.fetchone()
+    #     # 삭제할 게시글의 비밀번호 가져오기
+    #     cursor.execute("SELECT pw FROM board WHERE idx = %s", (idx,))
+    #     post = cursor.fetchone()
 
-        if not post:
-            flash("존재하지 않는 게시글입니다.", "danger")
-            db.close()
-            return redirect(url_for('contact'))
+    #     if not post:
+    #         flash("존재하지 않는 게시글입니다.", "danger")
+    #         db.close()
+    #         return redirect(url_for('contact'))
 
-        # 입력한 비밀번호가 게시글 비밀번호와 일치하는지 확인
-        if post['pw'] != pw:
-            flash("비밀번호가 틀렸습니다.", "danger")
-            db.close()
-            return redirect(url_for('contact'))
+    #     # 입력한 비밀번호가 게시글 비밀번호와 일치하는지 확인
+    #     if post['pw'] != pw:
+    #         flash("비밀번호가 틀렸습니다.", "danger")
+    #         db.close()
+    #         return redirect(url_for('contact'))
 
-        # 게시글 삭제
-        cursor.execute("DELETE FROM board WHERE idx = %s", (idx,))
-        db.commit()
-        db.close()
+    #     # 게시글 삭제
+    #     cursor.execute("DELETE FROM board WHERE idx = %s", (idx,))
+    #     db.commit()
+    #     db.close()
 
-        # flash("게시글이 삭제되었습니다.", "success")
-        return redirect(url_for('contact'))
+    #     # flash("게시글이 삭제되었습니다.", "success")
+    #     return redirect(url_for('contact'))
